@@ -1,4 +1,7 @@
-variable "allowed_ip_range" {}
+variable "allowed_ip_range" {
+  type        = set(string)
+  description = "allowed ip range"
+}
 
 variable "vpc" {
   type        = string
