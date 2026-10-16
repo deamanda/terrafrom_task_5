@@ -1,5 +1,5 @@
 resource "aws_security_group" "ssh_security_group" {
-  name   = "cmtr-otuokx4e-ssh-sg"
+  name   = var.ssh_sg
   vpc_id = var.vpc
 
   ingress {
@@ -22,7 +22,7 @@ resource "aws_security_group" "ssh_security_group" {
 
 
 resource "aws_security_group" "public_http_security_group" {
-  name   = "cmtr-otuokx4e-public-http-sg"
+  name   = var.public_http_sg
   vpc_id = var.vpc
 
   ingress {
@@ -44,7 +44,7 @@ resource "aws_security_group" "public_http_security_group" {
 }
 
 resource "aws_security_group" "private_http_security_group" {
-  name   = "cmtr-otuokx4e-private-http-sg"
+  name   = var.private_http_sg
   vpc_id = var.vpc
   ingress {
     security_groups = [aws_security_group.public_http_security_group.id]
