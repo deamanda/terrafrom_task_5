@@ -1,3 +1,5 @@
+variable "allowed_ip_range" {}
+
 variable "vpc" {
   type        = string
   description = "vpc id"
